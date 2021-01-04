@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">verifyphone</string>
 
+    <string name="phone">Phone </string>
+    <string name="sendotp">sendotp</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_sign_in">Verify and Sign In</string>
+    <string name="sign_out">sign out</string>
+
 </resources>
