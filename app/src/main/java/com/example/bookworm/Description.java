@@ -25,6 +25,14 @@ public class Description extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
+        Button button = (Button)findViewById(R.id.oder);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(Description.this, ContactDetails.class));
+            }
+        });
+
         bookname = findViewById(R.id.bookname);
         bookdiscription = findViewById(R.id.description);
         bookprice = findViewById(R.id.price);
@@ -41,4 +49,8 @@ public class Description extends AppCompatActivity {
         bookprice.setText(price);
     }
 
+
+
+    public void oder(View view) {
+    }
 }

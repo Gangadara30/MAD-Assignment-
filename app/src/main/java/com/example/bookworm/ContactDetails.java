@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,6 +65,13 @@ public class ContactDetails extends AppCompatActivity {
 
                 reference.child(String.valueOf(cname)).setValue(contactdetails);
                 Toast.makeText(ContactDetails.this,"contact details successfuly inserted",Toast.LENGTH_SHORT).show();
+                Button button = (Button)findViewById(R.id.button);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v){
+                        startActivity(new Intent(ContactDetails.this,OderDetails.class));
+                    }
+                });
             }
         });
     }
