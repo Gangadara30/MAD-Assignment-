@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BW</string>
+    <string name="web_client_id">web_client</string>
+    <string name="name">name</string>
+    <string name="logout">Logout</string>
+    <string name="id">id</string>
+    <string name="email">email</string>
+</resources>
