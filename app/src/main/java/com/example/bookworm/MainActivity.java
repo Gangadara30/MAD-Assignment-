@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
                             System.out.println("lenght of bookArray"+bookArray.size());
                             Log.d("X",bookDetails.getName());
 
-                            if (bookDetails.getName().equals(selectedItem)){
+                            if (bookDetails.getName().equals(selectedItem))
+                            {
                                 nextIntent.putExtra("selectedBook",bookDetails);
                                 break;
                             }
