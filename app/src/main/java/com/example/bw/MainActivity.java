@@ -35,7 +35,7 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
-
+//Authentication using google API
     private static final String TAG = "MainActivity";
     private SignInButton signInButton;
     private GoogleApiClient googleApiClient;
