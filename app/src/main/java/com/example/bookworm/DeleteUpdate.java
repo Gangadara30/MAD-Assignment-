@@ -45,7 +45,7 @@ public class DeleteUpdate extends AppCompatActivity {
 
         Intent intent = getIntent();
         Book_Details book = (Book_Details) intent.getSerializableExtra("selectedBook");
-         name = book.getBname();
+        name = book.getBname();
         bookname.setText(name);
         discrip = book.getBdiscrip();
         bookdiscription.setText(discrip);
@@ -89,6 +89,13 @@ public class DeleteUpdate extends AppCompatActivity {
                 alert.show();
             }
         });
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reference = FirebaseDatabase.getInstance().getReference();
+                update(view);
+            }
+        });
 
 
 
@@ -97,7 +104,7 @@ public class DeleteUpdate extends AppCompatActivity {
 
 
 
-    /*public void update (View view){
+    public void update (View view){
         if (isBookNameChanged()|| isDiscriptionChanged() || isPriceChanged()){
             Toast.makeText(this,"Data has been updated",Toast.LENGTH_LONG).show();
 
@@ -107,7 +114,7 @@ public class DeleteUpdate extends AppCompatActivity {
 
     private boolean isPriceChanged() {
         if (!pric.equals(bookprice.getText().toString())){
-            reference.child("bprice").setValue(bookprice.getText().toString());
+            reference.child(name).child("bprice").setValue(bookprice.getText().toString());
 
             return true;
 
@@ -119,7 +126,7 @@ public class DeleteUpdate extends AppCompatActivity {
 
     private boolean isDiscriptionChanged() {
         if (!discrip.equals(bookdiscription.getText().toString())){
-            reference.child("bdiscrip").setValue(bookdiscription.getText().toString());
+            reference.child("Book_Details").child(name).child("bdiscrip").setValue(bookdiscription.getText().toString());
 
             return true;
 
@@ -138,7 +145,7 @@ public class DeleteUpdate extends AppCompatActivity {
         }else {
             return false;
         }
-    }*/
+    }
 
 
 
