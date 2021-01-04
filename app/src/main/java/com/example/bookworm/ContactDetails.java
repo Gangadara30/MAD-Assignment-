@@ -65,10 +65,12 @@ public class ContactDetails extends AppCompatActivity {
 
                 reference.child(String.valueOf(cname)).setValue(contactdetails);
                 Toast.makeText(ContactDetails.this,"contact details successfuly inserted",Toast.LENGTH_SHORT).show();
+
                 Button button = (Button)findViewById(R.id.button);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v){
+                    public void onClick(View v)
+                    {
                         startActivity(new Intent(ContactDetails.this,OderDetails.class));
                     }
                 });
