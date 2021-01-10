@@ -3,9 +3,16 @@ package com.example.bookworm;
 public class Contact_Details {
     private String name;
     private String address;
-    private int phone;
 
     public Contact_Details() {
+    }
+
+    private String phone;
+
+    public Contact_Details(String name, String address, String phone) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
     }
 
     public String getName() {
@@ -24,11 +31,11 @@ public class Contact_Details {
         this.address = address;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 }

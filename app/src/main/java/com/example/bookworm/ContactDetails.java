@@ -58,7 +58,7 @@ public class ContactDetails extends AppCompatActivity {
                     Toast.makeText(ContactDetails.this,"please fill all the fields", Toast.LENGTH_SHORT).show();
                 }
                 String cname = name.getText().toString().trim();
-                int cphone = Integer.parseInt(phone.getText().toString().trim());
+                String  cphone = phone.getText().toString().trim();
                 contactdetails.setAddress(address.getText().toString().trim());
                 contactdetails.setName(cname);
                 contactdetails.setPhone(cphone);
