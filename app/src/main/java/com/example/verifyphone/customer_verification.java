@@ -8,17 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.PhoneAuthOptions;
-import com.google.firebase.auth.PhoneAuthProvider;
-
-import java.util.concurrent.TimeUnit;
-
-public class MainActivity extends AppCompatActivity {
+public class customer_verification extends AppCompatActivity {
 
     Button btn ;
     Button otpbtn ;
@@ -47,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                Intent intent = new Intent(MainActivity.this, verifiphoneActivity2.class);
+                Intent intent = new Intent(customer_verification.this, customer_verifyOTP.class);
                 intent.putExtra("mobile", mobile);
                 startActivity(intent);
             }

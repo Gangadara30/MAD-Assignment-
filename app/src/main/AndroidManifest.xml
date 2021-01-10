@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Verifyphone">
-        <activity android:name=".successPage"></activity>
+        <activity android:name=".publisher_verifyOTP"></activity>
+        <activity android:name=".publisher_verification" />
+        <activity android:name=".successPage" />
         <activity android:name=".successpage" />
-        <activity android:name=".verifiphoneActivity2" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".customer_verifyOTP" />
+        <activity android:name=".customer_verification">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
