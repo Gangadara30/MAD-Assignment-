@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".SplashWindow">
+        <activity android:name=".SignUpBtnCustomer"></activity>
+        <activity android:name=".BuddiPhone" />
+        <activity android:name=".AnukiLogin" />
+        <activity android:name=".CusReg" />
+        <activity android:name=".PubReg" />
+        <activity android:name=".SignUpBtn" />
+        <activity android:name=".ConnectPubCus">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
