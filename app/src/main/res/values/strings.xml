@@ -7,5 +7,10 @@
     <string name="post_book">Post Book</string>
     <string name="read_with_us_and_crave_with_us">Read with us and crave with us...</string>
     <string name="book_worm">Book Worm</string>
+    <string name="phone">Phone </string>
+    <string name="sendotp">sendotp</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_sign_in">Verify and Sign In</string>
+    <string name="sign_out">sign out</string>
 
 </resources>
