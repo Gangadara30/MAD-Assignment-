@@ -1,6 +1,5 @@
-package com.example.verifyphone;
+package com.example.bookworm;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class publisher_verification extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class customer_verification extends AppCompatActivity {
+
     Button btn ;
     Button otpbtn ;
     EditText edt;
@@ -17,7 +19,9 @@ public class publisher_verification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
+
+
 
         edt =(EditText) findViewById(R.id.editTextPhone);
         btn=(Button) findViewById(R.id.email);
@@ -34,7 +38,7 @@ public class publisher_verification extends AppCompatActivity {
                     return;
                 }
 
-                Intent intent = new Intent(publisher_verification.this, customer_verifyOTP.class);
+                Intent intent = new Intent(customer_verification.this, customer_verifyOTP.class);
                 intent.putExtra("mobile", mobile);
                 startActivity(intent);
             }
@@ -42,7 +46,6 @@ public class publisher_verification extends AppCompatActivity {
 
 
 
-
-
     }
 }
+

@@ -16,11 +16,11 @@
         <activity android:name=".CusReg" />
         <activity android:name=".PubReg" />
         <activity android:name=".SignUpBtn" />
-        <activity android:name=".ConnectPubCus">
+        <activity android:name=".ConnectPubCus"/>
         <activity android:name=".publisher_verifyOTP"></activity>
         <activity android:name=".publisher_verification" />
-        <activity android:name=".successPage" />
-        <activity android:name=".successpage" />
+<!--        <activity android:name=".successPage" />-->
+<!--        <activity android:name=".successpage" />-->
         <activity android:name=".customer_verifyOTP" />
         <activity android:name=".customer_verification">
             <intent-filter>
