@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".SplashWindow">
-        <activity android:name=".SignUpBtnCustomer"></activity>
+        <activity android:name=".SplashWindow"/>
+        <activity android:name=".SignUpBtnCustomer"/>
         <activity android:name=".BuddiPhone" />
         <activity android:name=".AnukiLogin" />
         <activity android:name=".CusReg" />

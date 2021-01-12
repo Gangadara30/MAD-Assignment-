@@ -1,4 +1,4 @@
-package my.bookworm.bw;
+package com.example.bookworm;
 
 import androidx.appcompat.app.AppCompatActivity;
 

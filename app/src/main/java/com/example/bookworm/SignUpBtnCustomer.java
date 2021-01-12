@@ -1,4 +1,4 @@
-package my.bookworm.bw;
+package com.example.bookworm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,23 +7,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SignUpBtn extends AppCompatActivity {
+public class SignUpBtnCustomer extends AppCompatActivity {
     private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_btn);
+        setContentView(R.layout.activity_sign_up_btn_customer);
 
         button = (Button) findViewById(R.id.supbtn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openPubReg();
+                openCusReg();
             }
         });
     }
-    public void openPubReg(){
-        startActivity(new Intent(getApplicationContext(), PubReg.class));
-    }
+    public void openCusReg(){
+        startActivity(new Intent(getApplicationContext(), CusReg.class));}
 }

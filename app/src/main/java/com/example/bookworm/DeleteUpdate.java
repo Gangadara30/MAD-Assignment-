@@ -38,7 +38,7 @@ public class DeleteUpdate extends AppCompatActivity {
 
         bookname = findViewById(R.id.editBookName);
         bookdiscription = findViewById(R.id.editDiscription);
-        bookprice = findViewById(R.id.editPrice);
+//        bookprice = findViewById(R.id.editPrice);
         btnUpdate = (Button)findViewById(R.id.updateBtton);
         btnDelete = (Button)findViewById(R.id.deleteButton);
         //userId = bookDetails.getBname();
