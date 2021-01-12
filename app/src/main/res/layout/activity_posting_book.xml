@@ -76,7 +76,7 @@
         android:layout_marginRight="22dp"
         android:layout_marginBottom="314dp"
         android:ems="10"
-        android:hint="@string/discription"
+        android:hint="@string/description"
         android:inputType="textPersonName" />
 
     <EditText
