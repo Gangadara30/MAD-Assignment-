@@ -1,4 +1,4 @@
-package my.bookworm.bw;
+package com.example.bookworm;
 
 import org.junit.Test;
 

@@ -1,14 +1,14 @@
-package my.bookworm.bw;
+package com.example.bookworm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class AnukiLogin extends AppCompatActivity {
+public class BuddiPhone extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anuki_login);
+        setContentView(R.layout.activity_buddi_phone);
     }
 }

@@ -1,6 +1,6 @@
-package my.bookworm.bw;
+package com.example.bookworm;
 
-public class Customer {
+public class Publisher {
     private String name1;
     private String name2;
     private String mail;
@@ -8,7 +8,8 @@ public class Customer {
     private String cpass;
     private String no;
 
-    public Customer() {
+    public Publisher() {
+
     }
 
     public String getName1() {
