@@ -1,28 +1,27 @@
 package com.example.test;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import android.view.View;
+import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Button;
-import android.widget.ProgressBar;
 
 
-import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class CustomerLogin extends AppCompatActivity {
 
     private EditText emailTV, passwordTV;
-    private Button loginBtn;
+    private Button CBtn;
     private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
@@ -36,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
         initializeUI();
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+        CBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { 
+            public void onClick(View v) {
                 loginUserAccount();
             }
         });
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
 
-                            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                            Intent intent = new Intent(CustomerLogin.this, MainActivity1.class);
                             startActivity(intent);
                         }
                         else {
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         emailTV = findViewById(R.id.email);
         passwordTV = findViewById(R.id.password);
 
-        loginBtn = findViewById(R.id.login);
+        CBtn = findViewById(R.id.login);
         progressBar = findViewById(R.id.progressBar);
 
     }
