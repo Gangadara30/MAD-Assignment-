@@ -1,6 +1,8 @@
 package com.example.bookworm;
 
-public class Contact_Details {
+import java.io.Serializable;
+
+public class Contact_Details implements Serializable {
     private String name;
     private String address;
 

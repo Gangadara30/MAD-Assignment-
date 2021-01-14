@@ -1,5 +1,6 @@
 package com.example.bookworm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -29,6 +30,8 @@ public class OderDetails extends AppCompatActivity {
         setContentView(R.layout.activity_oder_details);
         listView = findViewById(R.id.booklist);
         reference = FirebaseDatabase.getInstance().getReference().child("Book_Details");
+        Intent intent = getIntent();
+        Contact_Details confirmedOrder = (Contact_Details) intent.getSerializableExtra("ConfirmedOrder");
         reference.addValueEventListener(new ValueEventListener() {
 
             @Override
