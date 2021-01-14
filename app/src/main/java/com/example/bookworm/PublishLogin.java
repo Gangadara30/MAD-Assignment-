@@ -1,27 +1,27 @@
-package com.example.test;
+package com.example.bookworm;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.widget.EditText;
-import android.widget.Button;
-
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class CustomerLogin extends AppCompatActivity {
+public class PublishLogin extends AppCompatActivity {
+
 
     private EditText emailTV, passwordTV;
-    private Button CBtn;
+    private Button PBtn;
     private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
@@ -35,7 +35,7 @@ public class CustomerLogin extends AppCompatActivity {
 
         initializeUI();
 
-        CBtn.setOnClickListener(new View.OnClickListener() {
+        PBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginUserAccount();
@@ -67,7 +67,7 @@ public class CustomerLogin extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
 
-                            Intent intent = new Intent(CustomerLogin.this, MainActivity1.class);
+                            Intent intent = new Intent(PublishLogin.this, MainActivity.class);
                             startActivity(intent);
                         }
                         else {
@@ -82,7 +82,7 @@ public class CustomerLogin extends AppCompatActivity {
         emailTV = findViewById(R.id.email);
         passwordTV = findViewById(R.id.password);
 
-        CBtn = findViewById(R.id.login);
+        PBtn = findViewById(R.id.login);
         progressBar = findViewById(R.id.progressBar);
 
     }

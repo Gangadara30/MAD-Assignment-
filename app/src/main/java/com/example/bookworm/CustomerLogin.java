@@ -1,7 +1,7 @@
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
+package com.example.bookworm;
+
 import android.content.Intent;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -10,18 +10,18 @@ import android.widget.EditText;
 import android.widget.Button;
 
 
-import com.example.test.MainActivity1;
-import com.example.test.R;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class PublishLogin extends AppCompatActivity {
-
+public class CustomerLogin extends AppCompatActivity {
 
     private EditText emailTV, passwordTV;
-    private Button PBtn;
+    private Button CBtn;
     private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
@@ -29,13 +29,13 @@ public class PublishLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.customer_login);
 
         mAuth = FirebaseAuth.getInstance();
 
         initializeUI();
 
-        PBtn.setOnClickListener(new View.OnClickListener() {
+        CBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginUserAccount();
@@ -67,7 +67,7 @@ public class PublishLogin extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
 
-                            Intent intent = new Intent(PublishLogin.this, MainActivity1.class);
+                            Intent intent = new Intent(CustomerLogin.this, MainActivity.class);
                             startActivity(intent);
                         }
                         else {
@@ -82,7 +82,7 @@ public class PublishLogin extends AppCompatActivity {
         emailTV = findViewById(R.id.email);
         passwordTV = findViewById(R.id.password);
 
-        PBtn = findViewById(R.id.login);
+        CBtn = findViewById(R.id.login);
         progressBar = findViewById(R.id.progressBar);
 
     }

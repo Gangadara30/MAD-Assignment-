@@ -18,7 +18,7 @@
         <activity android:name=".PubReg" />
         <activity android:name=".SignUpBtn" />
         <activity android:name=".ConnectPubCus"/>
-        <activity android:name=".publisher_verifyOTP"></activity>
+        <activity android:name=".publisher_verifyOTP" />
         <activity android:name=".publisher_verification" />
 <!--        <activity android:name=".successPage" />-->
 <!--        <activity android:name=".successpage" />-->
@@ -30,7 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DeleteUpdate" />
+        <activity android:name=".DeleteUpdate" >
+
+        </activity>
         <activity android:name=".PostingBook" />
         <activity android:name=".PublisherHomeNavi">
 
@@ -43,12 +45,9 @@
         <activity android:name=".OderDetails" />
         <activity android:name=".Description" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name="PublishLogin" />
+        <activity android:name=".PublishLogin" />
+        <activity android:name=".CustomerLogin" />
     </application>
 
 </manifest>
