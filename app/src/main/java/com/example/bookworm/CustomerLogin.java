@@ -1,4 +1,4 @@
-package com.example.test;
+package com.example.bookworm;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,7 +29,7 @@ public class CustomerLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.customer_login);
 
         mAuth = FirebaseAuth.getInstance();
         emailTV = findViewById(R.id.email);
@@ -69,7 +69,7 @@ public class CustomerLogin extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
                                     progressBar.setVisibility(View.GONE);
 
-                                    Intent intent = new Intent(CustomerLogin.this, MainActivity1.class);
+                                    Intent intent = new Intent(CustomerLogin.this, MainActivity.class);
                                     startActivity(intent);
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
