@@ -29,12 +29,9 @@ public class SplashWindow extends AppCompatActivity {
 
         topanim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
         bottomanim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
-
         image = findViewById(R.id.imageView);
         logo = findViewById(R.id.textView2);
         slogan = findViewById(R.id.textView3);
-
-
         image.setAnimation(topanim);
         logo.setAnimation(bottomanim);
         slogan.setAnimation(bottomanim);
