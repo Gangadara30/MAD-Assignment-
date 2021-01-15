@@ -1,7 +1,11 @@
 package com.example.bookworm;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -27,10 +31,10 @@ public class OderDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oder_details);
-
-
-
+        listView = findViewById(R.id.booklist);
         reference = FirebaseDatabase.getInstance().getReference().child("Book_Details");
+        Intent intent = getIntent();
+        Contact_Details confirmedOrder = (Contact_Details) intent.getSerializableExtra("ConfirmedOrder");
         reference.addValueEventListener(new ValueEventListener() {
 
             @Override

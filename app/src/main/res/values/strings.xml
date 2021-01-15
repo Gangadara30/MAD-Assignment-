@@ -12,5 +12,11 @@
     <string name="enter_otp">Enter OTP</string>
     <string name="verify_sign_in">Verify and Sign In</string>
     <string name="sign_out">sign out</string>
-
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="sign_in_as_a_publisher">Sign in as a Publisher</string>
+    <string name="sign_in_as_a_customer">sign in as a customer</string>
+    <string name="connect_as_publisher">Connect as Publisher</string>
+    <string name="connect_as_customer">Connect as Customer</string>
 </resources>

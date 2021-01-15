@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class publisher_verification extends AppCompatActivity {
     Button btn ;
     Button otpbtn ;
+
     EditText edt;
     String phoneNo;
 
@@ -22,6 +23,8 @@ public class publisher_verification extends AppCompatActivity {
         edt =(EditText) findViewById(R.id.editTextPhone);
         btn=(Button) findViewById(R.id.email);
         otpbtn=(Button) findViewById(R.id.sendotp);
+
+
         findViewById(R.id.sendotp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,5 +47,7 @@ public class publisher_verification extends AppCompatActivity {
 
 
 
+
     }
+
 }
