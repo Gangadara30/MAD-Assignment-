@@ -1,7 +1,5 @@
 package com.example.bookworm;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashWindow extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class SplashWindow extends AppCompatActivity {
        new Handler().postDelayed(new Runnable() {
            @Override
            public void run() {
-               Intent intent = new Intent(SplashWindow.this,PublisherHomeNavi.class);
+               Intent intent = new Intent(SplashWindow.this,ConnectPubCus.class);
                startActivity(intent);
                finish();
            }

@@ -7,7 +7,7 @@
     android:background="#7CA849"
     tools:context=".OderDetails">
 
-    <ListView
+   <ListView
         android:id="@+id/booklist"
         android:layout_width="356dp"
         android:layout_height="558dp"
@@ -44,6 +44,19 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="58dp" />
+
+
+
+    <TextView
+        android:id="@+id/selectprice"
+        android:layout_width="101dp"
+        android:layout_height="36dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39"
+        tools:layout_editor_absoluteX="233dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout >

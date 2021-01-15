@@ -42,12 +42,12 @@ public class ConnectPubCus extends AppCompatActivity {
     }
 
     public void openPublisher(){
-        Intent intent1 = new Intent(this,PubReg.class);
+        Intent intent1 = new Intent(this,SignUpBtn.class);
         startActivity(intent1);
 
     }
     public void openCustomer(){
-        Intent intent2 = new Intent(this,CusReg.class);
+        Intent intent2 = new Intent(this,SignUpBtnCustomer.class);
         startActivity(intent2);
 
     }
