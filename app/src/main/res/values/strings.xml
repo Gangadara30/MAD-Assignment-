@@ -19,4 +19,5 @@
     <string name="sign_in_as_a_customer">sign in as a customer</string>
     <string name="connect_as_publisher">Connect as Publisher</string>
     <string name="connect_as_customer">Connect as Customer</string>
+    <string name="plogin">login</string>
 </resources>

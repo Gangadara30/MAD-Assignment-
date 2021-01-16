@@ -8,13 +8,8 @@
         android:icon="@drawable/ic_homenew"
         />
     <item
-        android:id="@+id/post"
-        android:title="Post Book"
-        android:icon="@drawable/ic_add_book"/>
-    <item
         android:id="@+id/logout"
         android:title="Logout"
         android:icon="@drawable/ic_logout"
         />
-
 </menu>

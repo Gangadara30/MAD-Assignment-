@@ -1,5 +1,4 @@
 package com.example.bookworm;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -32,58 +31,51 @@ public class PublishLogin extends AppCompatActivity {
         setContentView(R.layout.publisher_login);
 
         mAuth = FirebaseAuth.getInstance();
-
-        initializeUI();
+        emailTV = findViewById(R.id.email);
+        passwordTV = findViewById(R.id.password);
+        progressBar = findViewById(R.id.progressBar);
+        PBtn = findViewById(R.id.plogin);
 
         PBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginUserAccount();
+
+                String email = emailTV.getText().toString().trim();
+                String password = passwordTV.getText().toString().trim();
+
+                if (TextUtils.isEmpty(email)) {
+
+                    emailTV.setError("Email is required");
+                    return;
+                }
+                if (TextUtils.isEmpty(password)) {
+
+                    passwordTV.setError("Password is required");
+                    return;
+                }
+                if (password.length() < 6) {
+                    passwordTV.setError("Password must be > 6 Characters");
+                    return;
+                }
+                progressBar.setVisibility(View.VISIBLE);
+
+
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(PublishLogin.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(PublishLogin.this, PublisherHomeNavi.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(PublishLogin.this, "Login failed! Please try again later", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.GONE);
+                                }
+                            }
+                        });
             }
+
+
         });
-    }
-
-    private void loginUserAccount() {
-        progressBar.setVisibility(View.VISIBLE);
-
-        String email, password;
-        email = emailTV.getText().toString();
-        password = passwordTV.getText().toString();
-
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
-            return;
-        }
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Please enter password!", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
-
-                            Intent intent = new Intent(PublishLogin.this, MainActivity.class);
-                            startActivity(intent);
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
-    }
-
-    private void initializeUI() {
-        emailTV = findViewById(R.id.email);
-        passwordTV = findViewById(R.id.password);
-
-        PBtn = findViewById(R.id.login);
-        progressBar = findViewById(R.id.progressBar);
-
-    }
-}
+    }}

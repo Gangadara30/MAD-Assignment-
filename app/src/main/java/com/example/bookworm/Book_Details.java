@@ -10,6 +10,7 @@ public class Book_Details implements Serializable {
     private String description;
     private String price;
 
+
     public Book_Details() {
     }
 
@@ -40,6 +41,7 @@ public class Book_Details implements Serializable {
         this.name = name;
         this.description = description;
         this.price = price;
+
     }
 
     public String getName() {
@@ -65,5 +67,8 @@ public class Book_Details implements Serializable {
     public void setPrice(String price) {
         this.price = price;
     }
+
+
+
 }
 

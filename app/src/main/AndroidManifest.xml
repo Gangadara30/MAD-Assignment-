@@ -10,7 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".SplashWindow"/>
+        <activity android:name=".SplashWindow">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".SignUpBtnCustomer"/>
         <activity android:name=".BuddiPhone" />
         <activity android:name=".AnukiLogin" />
@@ -24,11 +30,6 @@
 <!--        <activity android:name=".successpage" />-->
         <activity android:name=".customer_verifyOTP" />
         <activity android:name=".customer_verification">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".DeleteUpdate" >
 

@@ -1,8 +1,5 @@
 package com.example.bookworm;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +7,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -41,10 +40,6 @@ public class PublisherHomeNavi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publisher_home_navi);
         listview = findViewById(R.id.bookList);
-
-
-
-
 
 
         reference = FirebaseDatabase.getInstance().getReference().child("Book_Details");
@@ -104,6 +99,12 @@ public class PublisherHomeNavi extends AppCompatActivity {
 
                     case R.id.home:
                         return true;
+
+                    case R.id.logout:
+                        startActivity(new Intent(getApplicationContext(),ConnectPubCus.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
 
                 }
                 return false;

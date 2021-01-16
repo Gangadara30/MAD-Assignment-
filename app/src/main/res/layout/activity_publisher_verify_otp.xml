@@ -66,8 +66,8 @@
 
     <Button
         android:id="@+id/verfbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="237dp"
+        android:layout_height="49dp"
         android:layout_marginStart="163dp"
         android:layout_marginLeft="163dp"
         android:layout_marginTop="85dp"
@@ -79,22 +79,11 @@
         app:backgroundTint="#9C27B0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edttxt1" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="292dp"
-        android:layout_marginLeft="292dp"
-        android:layout_marginTop="81dp"
-        android:layout_marginBottom="38dp"
-        android:text="Next Page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verfbtn" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

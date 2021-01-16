@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,7 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                         startActivity(nextIntent);
                         System.out.println(selectedItem);
+
+
                     }
                 });
             }
@@ -80,6 +84,25 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
+        });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+
+                    case R.id.home:
+                        return true;
+
+                    case R.id.logout:
+                        startActivity(new Intent(getApplicationContext(),ConnectPubCus.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
         });
 
     }

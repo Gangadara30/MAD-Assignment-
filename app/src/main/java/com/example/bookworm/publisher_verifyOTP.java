@@ -26,14 +26,29 @@ public class publisher_verifyOTP extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_publisher_verify_otp);verifybtn=(Button)findViewById(R.id.verfbtn);
+        setContentView(R.layout.activity_publisher_verify_otp);
+        verifybtn=(Button)findViewById(R.id.verfbtn);
         editotp=(EditText)findViewById(R.id.edttxt1);
+
         final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Intent intent=getIntent();
         phonenumber=intent.getStringExtra("phone");
         Toast.makeText(publisher_verifyOTP.this, "+"+phonenumber, Toast.LENGTH_SHORT).show();
+        verifybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPublisherHome();
+            }
+        });
+
     }
+    public void openPublisherHome(){
+        Intent intent1 = new Intent(this,PublisherHomeNavi.class);
+        startActivity(intent1);
+
+    }
+
     void initialsendotp(){
         try {
             // Construct data

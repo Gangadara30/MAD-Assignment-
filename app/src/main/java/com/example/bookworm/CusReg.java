@@ -11,6 +11,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +25,7 @@ public class CusReg extends AppCompatActivity {
     EditText cfname, clname, cemail, cpwd, ccpwd,cphn;
     Button cRegistrationBtn, cemailbtn, cphonebtn;
     DatabaseReference reff;
+    FirebaseAuth fAuth;
     Customer customer;
 
     long maxid=0;
@@ -39,6 +44,7 @@ public class CusReg extends AppCompatActivity {
         cRegistrationBtn=findViewById(R.id.cusrbtn);
         cemailbtn=findViewById(R.id.ebtn);
         cphonebtn=findViewById(R.id.phnbtn);
+        fAuth = FirebaseAuth.getInstance();
 
         customer= new Customer();
 
@@ -56,8 +62,6 @@ public class CusReg extends AppCompatActivity {
 
             }
         });
-
-
 
         cRegistrationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,10 +101,18 @@ public class CusReg extends AppCompatActivity {
 
                 reff.child(String.valueOf(maxid+1)).setValue(customer);
 
-                Toast.makeText(CusReg.this,"Data Insert Successfully",Toast.LENGTH_LONG).show();
 
+                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(CusReg.this,"Data Insert Successfully",Toast.LENGTH_LONG).show();
 
+                        }else{
 
+                        }
+                    }
+                });
 
             }
         });
@@ -124,12 +136,12 @@ public class CusReg extends AppCompatActivity {
     }
 
     public void openActivity1(){
-        Intent intent= new Intent(this,AnukiLogin.class);
+        Intent intent= new Intent(this,CustomerLogin.class);
         startActivity(intent);
     }
 
     public void openActivity2(){
-        Intent intent=new Intent(this,BuddiPhone.class);
+        Intent intent=new Intent(this,customer_verification.class);
         startActivity(intent);
     }
 }

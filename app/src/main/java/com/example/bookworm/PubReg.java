@@ -11,6 +11,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +25,7 @@ public class PubReg extends AppCompatActivity {
     EditText pfname, plname, pemail, ppwd, pcpwd,pphn;
     Button pRegistrationBtn, pemailbtn, pphonebtn;
     DatabaseReference reff;
+    FirebaseAuth fAuth;
     Publisher publisher;
 
     long maxid=0;
@@ -40,6 +45,7 @@ public class PubReg extends AppCompatActivity {
         pRegistrationBtn=findViewById(R.id.pubrbtn);
         pemailbtn=findViewById(R.id.ebtn);
         pphonebtn=findViewById(R.id.phnbtn);
+        fAuth = FirebaseAuth.getInstance();
 
         publisher= new Publisher();
 
@@ -98,7 +104,18 @@ public class PubReg extends AppCompatActivity {
 
                 reff.child(String.valueOf(maxid+1)).setValue(publisher);
 
-                Toast.makeText(PubReg.this,"Data Insert Successfully",Toast.LENGTH_LONG).show();
+                //Toast.makeText(PubReg.this,"Data Insert Successfully",Toast.LENGTH_LONG).show();
+
+                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                      if(task.isSuccessful()){
+                          Toast.makeText(PubReg.this,"Data Insert Successfully",Toast.LENGTH_LONG).show();
+                      }else{
+
+                      }
+                    }
+                });
 
 
 
@@ -120,21 +137,14 @@ public class PubReg extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
     }
     public void openActivity1(){
-        Intent intent= new Intent(this,AnukiLogin.class);
+        Intent intent= new Intent(this,PublishLogin.class);
         startActivity(intent);
     }
 
     public void openActivity2(){
-        Intent intent=new Intent(this,BuddiPhone.class);
+        Intent intent=new Intent(this,publisher_verification.class);
         startActivity(intent);
     }
 }
