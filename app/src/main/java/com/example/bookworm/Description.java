@@ -1,18 +1,12 @@
 package com.example.bookworm;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-
-import java.util.jar.Attributes;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Description extends AppCompatActivity {
 
@@ -47,10 +41,8 @@ public class Description extends AppCompatActivity {
         bookdiscription.setText(discrip);
         price = book.getPrice();
         bookprice.setText(price);
+
     }
-
-
-
     public void oder(View view) {
     }
 }

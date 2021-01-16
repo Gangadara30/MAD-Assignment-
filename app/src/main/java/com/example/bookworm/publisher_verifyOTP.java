@@ -35,6 +35,17 @@ public class publisher_verifyOTP extends AppCompatActivity {
         Intent intent=getIntent();
         phonenumber=intent.getStringExtra("phone");
         Toast.makeText(publisher_verifyOTP.this, "+"+phonenumber, Toast.LENGTH_SHORT).show();
+        verifybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPublisherHome();
+            }
+        });
+
+    }
+    public void openPublisherHome(){
+        Intent intent1 = new Intent(this,PublisherHomeNavi.class);
+        startActivity(intent1);
 
     }
 

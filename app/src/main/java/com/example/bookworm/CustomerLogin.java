@@ -23,7 +23,6 @@ public class CustomerLogin extends AppCompatActivity {
     private EditText emailTV, passwordTV;
     private Button CBtn;
     private ProgressBar progressBar;
-
     private FirebaseAuth mAuth;
 
     @Override
@@ -66,11 +65,11 @@ public class CustomerLogin extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(CustomerLogin.this, MainActivity.class);
                                     startActivity(intent);
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.GONE);
                                 }
                             }

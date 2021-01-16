@@ -20,7 +20,7 @@ import java.util.Random;
 public class customer_verifyOTP extends AppCompatActivity {
     int randonnumber;
     String phonenumber;
-    Button verifybtn,logoutBtn2;
+    Button verifybtn;
     EditText editotp;
     String otp_text;
     @Override
@@ -29,21 +29,21 @@ public class customer_verifyOTP extends AppCompatActivity {
         setContentView(R.layout.verifiphoneactivity2);
         verifybtn=(Button)findViewById(R.id.verfbtn);
         editotp=(EditText)findViewById(R.id.edttxt1);
-        logoutBtn2=(Button)findViewById(R.id.logout2);
+
         final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Intent intent=getIntent();
         phonenumber=intent.getStringExtra("phone");
         Toast.makeText(customer_verifyOTP.this, "+"+phonenumber, Toast.LENGTH_SHORT).show();
-        logoutBtn2.setOnClickListener(new View.OnClickListener() {
+        verifybtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openPublisherCustomer2();
+                openCustomerHome();
             }
         });
     }
-    public void  openPublisherCustomer2(){
-        startActivity(new Intent(getApplicationContext(), ConnectPubCus.class));
+    public void  openCustomerHome(){
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
     void initialsendotp(){
         try {

@@ -52,10 +52,7 @@ public class ContactDetails extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!name.getText().toString().isEmpty() && !phone.getText().toString().isEmpty() && !address.getText().toString().isEmpty())
-                {
-                    Toast.makeText(ContactDetails.this,"please fill all the fields", Toast.LENGTH_SHORT).show();
-                }
+
                 String cname = name.getText().toString().trim();
                 String  cphone = phone.getText().toString().trim();
                 contactdetails.setAddress(address.getText().toString().trim());
@@ -63,13 +60,13 @@ public class ContactDetails extends AppCompatActivity {
                 contactdetails.setPhone(cphone);
 
                 reference.child(String.valueOf(cname)).setValue(contactdetails);
-                Toast.makeText(ContactDetails.this,"contact details successfuly inserted",Toast.LENGTH_SHORT).show();
 
                 Button button = (Button)findViewById(R.id.button);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v)
                     {
+                        Toast.makeText(ContactDetails.this,"contact details successfuly inserted",Toast.LENGTH_SHORT).show();
                         Intent intent =  new Intent(ContactDetails.this,OderDetails.class);
                         intent.putExtra("ConfirmedOrder", contactdetails);
                         startActivity(intent);

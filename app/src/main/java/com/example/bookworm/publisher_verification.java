@@ -10,8 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class publisher_verification extends AppCompatActivity {
     Button btn ;
-    Button otpbtn ;
-
+    Button otpbtn,emailBtn;
     EditText edt;
     String phoneNo;
 
@@ -23,6 +22,7 @@ public class publisher_verification extends AppCompatActivity {
         edt =(EditText) findViewById(R.id.editTextPhone);
         btn=(Button) findViewById(R.id.email);
         otpbtn=(Button) findViewById(R.id.sendotp);
+        emailBtn=(Button)findViewById(R.id.email);
 
 
         findViewById(R.id.sendotp).setOnClickListener(new View.OnClickListener() {
@@ -37,17 +37,22 @@ public class publisher_verification extends AppCompatActivity {
                     return;
                 }
 
-                Intent intent = new Intent(publisher_verification.this, customer_verifyOTP.class);
+                Intent intent = new Intent(publisher_verification.this, publisher_verifyOTP.class);
                 intent.putExtra("mobile", mobile);
                 startActivity(intent);
             }
         });
+        emailBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity1();
+            }
+        });
 
-
-
-
-
-
+    }
+    public void openActivity1(){
+        Intent intent= new Intent(this,PublishLogin.class);
+        startActivity(intent);
     }
 
 }

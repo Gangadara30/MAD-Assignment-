@@ -77,14 +77,6 @@ public class PostingBook extends AppCompatActivity  {
 
 
 
-
-
-
-
-
-
-
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setSelectedItemId(R.id.post);

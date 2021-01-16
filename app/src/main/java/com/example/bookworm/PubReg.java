@@ -137,21 +137,14 @@ public class PubReg extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
     }
     public void openActivity1(){
-        Intent intent= new Intent(this,AnukiLogin.class);
+        Intent intent= new Intent(this,PublishLogin.class);
         startActivity(intent);
     }
 
     public void openActivity2(){
-        Intent intent=new Intent(this,BuddiPhone.class);
+        Intent intent=new Intent(this,publisher_verification.class);
         startActivity(intent);
     }
 }

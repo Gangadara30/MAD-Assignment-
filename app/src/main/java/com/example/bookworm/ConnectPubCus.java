@@ -34,11 +34,6 @@ public class ConnectPubCus extends AppCompatActivity {
         });
 
 
-
-
-
-
-
     }
 
     public void openPublisher(){

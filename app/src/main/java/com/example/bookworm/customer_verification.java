@@ -12,8 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class customer_verification extends AppCompatActivity {
 
     Button btn ;
-    Button otpbtn ;
-    Button anuki,narmada;
+    Button otpbtn,emailBtn;
     EditText edt;
     String phoneNo;
 
@@ -22,14 +21,10 @@ public class customer_verification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
 
-
-
         edt =(EditText) findViewById(R.id.editTextPhone);
         btn=(Button) findViewById(R.id.email);
         otpbtn=(Button) findViewById(R.id.sendotp);
-
-        anuki=(Button)findViewById(R.id.button2);
-        narmada=(Button)findViewById(R.id.button3);
+        emailBtn=(Button)findViewById(R.id.email);
 
         findViewById(R.id.sendotp).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,28 +43,17 @@ public class customer_verification extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        anuki.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity1();
-            }
-        });
-        narmada.setOnClickListener(new View.OnClickListener() {
+        emailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity2();
             }
         });
 
-
-
     }
-    public void openActivity1(){
-        Intent intent= new Intent(this,CustomerLogin.class);
-        startActivity(intent);
-    }
+
     public void openActivity2(){
-        Intent intent= new Intent(this,MainActivity.class);
+        Intent intent= new Intent(this,CustomerLogin.class);
         startActivity(intent);
     }
 }

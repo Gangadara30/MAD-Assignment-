@@ -44,6 +44,7 @@ public class CusReg extends AppCompatActivity {
         cRegistrationBtn=findViewById(R.id.cusrbtn);
         cemailbtn=findViewById(R.id.ebtn);
         cphonebtn=findViewById(R.id.phnbtn);
+        fAuth = FirebaseAuth.getInstance();
 
         customer= new Customer();
 
@@ -61,8 +62,6 @@ public class CusReg extends AppCompatActivity {
 
             }
         });
-
-
 
         cRegistrationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +101,7 @@ public class CusReg extends AppCompatActivity {
 
                 reff.child(String.valueOf(maxid+1)).setValue(customer);
 
-                //Toast.makeText(CusReg.this,"Data Insert Successfully",Toast.LENGTH_LONG).show();
+
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -137,12 +136,12 @@ public class CusReg extends AppCompatActivity {
     }
 
     public void openActivity1(){
-        Intent intent= new Intent(this,AnukiLogin.class);
+        Intent intent= new Intent(this,CustomerLogin.class);
         startActivity(intent);
     }
 
     public void openActivity2(){
-        Intent intent=new Intent(this,BuddiPhone.class);
+        Intent intent=new Intent(this,customer_verification.class);
         startActivity(intent);
     }
 }
