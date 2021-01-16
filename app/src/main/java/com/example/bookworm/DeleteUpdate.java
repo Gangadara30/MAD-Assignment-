@@ -1,8 +1,5 @@
 package com.example.bookworm;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,7 +24,7 @@ public class DeleteUpdate extends AppCompatActivity {
     EditText bookname,bookdiscription,bookprice;
     Button btnUpdate,btnDelete;
     DatabaseReference reference;
-    String name,discrip,pric,userId ;
+    String name,discrip,pric;
     Book_Details bookDetails;
 
 
@@ -38,7 +38,7 @@ public class DeleteUpdate extends AppCompatActivity {
 
         bookname = findViewById(R.id.editBookName);
         bookdiscription = findViewById(R.id.editDiscription);
-//        bookprice = findViewById(R.id.editPrice);
+       bookprice = findViewById(R.id.editPrice);
         btnUpdate = (Button)findViewById(R.id.updateBtton);
         btnDelete = (Button)findViewById(R.id.deleteButton);
         //userId = bookDetails.getBname();

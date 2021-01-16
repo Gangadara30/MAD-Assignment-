@@ -1,15 +1,16 @@
 package com.example.bookworm;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -19,7 +20,7 @@ import java.util.Random;
 public class customer_verifyOTP extends AppCompatActivity {
     int randonnumber;
     String phonenumber;
-    Button verifybtn;
+    Button verifybtn,logoutBtn2;
     EditText editotp;
     String otp_text;
     @Override
@@ -28,11 +29,21 @@ public class customer_verifyOTP extends AppCompatActivity {
         setContentView(R.layout.verifiphoneactivity2);
         verifybtn=(Button)findViewById(R.id.verfbtn);
         editotp=(EditText)findViewById(R.id.edttxt1);
+        logoutBtn2=(Button)findViewById(R.id.logout2);
         final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Intent intent=getIntent();
         phonenumber=intent.getStringExtra("phone");
         Toast.makeText(customer_verifyOTP.this, "+"+phonenumber, Toast.LENGTH_SHORT).show();
+        logoutBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPublisherCustomer2();
+            }
+        });
+    }
+    public void  openPublisherCustomer2(){
+        startActivity(new Intent(getApplicationContext(), ConnectPubCus.class));
     }
     void initialsendotp(){
         try {

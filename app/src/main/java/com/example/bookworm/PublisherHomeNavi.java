@@ -100,6 +100,12 @@ public class PublisherHomeNavi extends AppCompatActivity {
                     case R.id.home:
                         return true;
 
+                    case R.id.logout:
+                        startActivity(new Intent(getApplicationContext(),ConnectPubCus.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+
                 }
                 return false;
             }

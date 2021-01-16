@@ -65,13 +65,11 @@ public class PublishLogin extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
-                                    progressBar.setVisibility(View.GONE);
-
-                                    Intent intent = new Intent(PublishLogin.this, MainActivity.class);
+                                    Toast.makeText(PublishLogin.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(PublishLogin.this, PublisherHomeNavi.class);
                                     startActivity(intent);
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(PublishLogin.this, "Login failed! Please try again later", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.GONE);
                                 }
                             }

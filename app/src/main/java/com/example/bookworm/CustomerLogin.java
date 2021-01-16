@@ -67,8 +67,6 @@ public class CustomerLogin extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
-                                    progressBar.setVisibility(View.GONE);
-
                                     Intent intent = new Intent(CustomerLogin.this, MainActivity.class);
                                     startActivity(intent);
                                 } else {
