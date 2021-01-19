@@ -31,10 +31,14 @@ public class ContactDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_details);
 
+        Book_Details book_details;
         name = findViewById(R.id.name);
         address = findViewById(R.id.address);
         phone = findViewById(R.id.phone);
         button = findViewById(R.id.button);
+
+        Intent intent = getIntent();
+        book_details = (Book_Details) intent.getSerializableExtra("selectedBook");
 
         contactdetails = new Contact_Details();
         reference = FirebaseDatabase.getInstance().getReference().child("Contact_Details");
@@ -71,7 +75,9 @@ public class ContactDetails extends AppCompatActivity {
                     @Override
                     public void onClick(View v)
                     {
-                        startActivity(new Intent(ContactDetails.this,OderDetails.class));
+                        Intent i = new Intent(getApplicationContext(),OderDetails.class);
+                        i.putExtra("selectedBook",book_details);
+                        startActivity(i);
                     }
                 });
             }

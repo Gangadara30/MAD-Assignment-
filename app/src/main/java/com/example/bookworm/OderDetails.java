@@ -1,15 +1,14 @@
 package com.example.bookworm;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
+import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,46 +16,55 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.ref.Reference;
 import java.util.ArrayList;
 
 public class OderDetails extends AppCompatActivity {
 
     DatabaseReference reference;
+    TextView name;
+    TextView price;
+    MyArrayAdapter myArrayAdapter;
+    Book_Details book_details;
     ListView listView;
-    ArrayList<Book_Details>bookArray=new ArrayList<>();
-    ArrayAdapter<String>adapter;
-    ArrayAdapter<String>subadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oder_details);
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Book_Details");
+        Intent i = getIntent();
+        book_details = (Book_Details) i.getSerializableExtra("selectedBook");
+        name = findViewById(R.id.itemnameod); // comment
+        price = findViewById(R.id.itempriceod); // comment
+        name.setText(book_details.getName() + " : "); // comment
+        price.setText(book_details.getPrice()); // comment
+
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Book_Details"); //Change the col name
         reference.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<String> bnames = new ArrayList<>();
-                ArrayList<String>price = new ArrayList<>();
+
+//                ArrayList<String> names = new ArrayList<>();
+//                ArrayList<String> prices = new ArrayList<>();
+
                 for (DataSnapshot ds :snapshot.getChildren())
                 {
-                    String name = ds.child("bname").getValue().toString();
-                    bnames.add(name);
-                    String bookprice = ds.child("bprice").getValue().toString();
-                    price.add(bookprice);
-
-
-                    Book_Details booklist = ds.getValue(Book_Details.class);
-                    bookArray.add(booklist);
+                    Book_Details booklist = new Book_Details();
+                    booklist.setName(ds.child("bname").getValue().toString());
+                    booklist.setPrice(ds.child("bprice").getValue().toString());
+//                    names.add(booklist.getName());
+//                    prices.add(booklist.getPrice());
                 }
-                adapter=new ArrayAdapter<String>(OderDetails.this, android.R.layout.simple_list_item_1,bnames);
-                listView.setAdapter(adapter);
-                subadapter=new ArrayAdapter<String>(OderDetails.this, android.R.layout.simple_list_item_1,price);
-                listView.setAdapter(subadapter);
-            }
 
+//                String[] snames = names.toArray(new String[names.size()]);
+//                String[] sprices = prices.toArray(new String[prices.size()]);
+//
+//                myArrayAdapter = new MyArrayAdapter(getApplicationContext(),snames,sprices);
+//                listView.setAdapter(myArrayAdapter);
+
+            }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

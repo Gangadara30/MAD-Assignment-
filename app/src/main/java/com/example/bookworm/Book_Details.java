@@ -8,6 +8,7 @@ public class Book_Details implements Serializable {
     private String price;
 
     public Book_Details() {
+        this.description = "";
     }
 
     public Book_Details(String name, String description, String price) {
@@ -38,6 +39,15 @@ public class Book_Details implements Serializable {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Book_Details{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price='" + price + '\'' +
+                '}';
     }
 }
 
